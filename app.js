@@ -18,16 +18,10 @@ app.use(cors()); // Enable CORS
 app.use(bodyParser.json({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Using Routes
+
 app.use('/api/users', userRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 
-// Fallback Route for Serving Static Files
-// app.use((req, res) => {
-//     res.sendFile(path.join(__dirname, `public/${req.url}`));
-// });
-
-// Database Connection with Mongoose
 
 
 mongoose 
@@ -39,7 +33,7 @@ mongoose
           console.log('Server connected on port 7000');
       });
 
-      // Setup Socket.io for real-time functionality
+      // Socket.io for real-time functionality
       const io = require('socket.io')(server, {
           cors: {
               origin: "*",
