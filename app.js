@@ -10,9 +10,6 @@ const socketIo = require('socket.io');
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('api is running');
-})
 
 const userRoutes = require('./Routes/user');
 const leaderboardRoutes = require('./Routes/leaderboard');
